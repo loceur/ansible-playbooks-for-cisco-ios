@@ -1,1 +1,2 @@
-paramiko
+roles:
+   - name: paramiko
