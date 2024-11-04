@@ -1,13 +1,13 @@
 ---
 vars:
   ansible_python_interpreter: python
-  ansible_user: cisco 
+  ansible_user: itential
   ansible_password: itential
 
 children:
   ios:
     hosts:
-      cisco_switch: { ansible_host: 10.1.8.97 }
+      cisco_switch: { ansible_host: 10.1.6.83 }
     vars:
       ansible_network_os: ios
       ansible_become: yes
