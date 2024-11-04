@@ -1,26 +1,16 @@
 ---
 vars:
   ansible_python_interpreter: python
-  ansible_user: pi
-  ansible_password: cisco
+  ansible_user: cisco 
+  ansible_password: itential
 
 children:
   ios:
     hosts:
-      rtr101: { ansible_host: 192.168.161.14 }
-      rtr102: { ansible_host: 192.168.161.15 }
+      cisco_switch: { ansible_host: 10.1.8.97 }
     vars:
       ansible_network_os: ios
       ansible_become: yes
       ansible_become_method: enable
       ansible_connection: network_cli
       ansible_network_provider: ansible-network.cisco_ios
-  asa:
-    hosts:
-      ios01: { ansible_host: 192.168.161.55 }
-      ios02: { ansible_host: 192.168.161.56 }
-    vars:
-      ansible_network_os: asa
-      ansible_become: yes
-      ansible_become_method: enable
-      ansible_connection: network_cli
